@@ -24,8 +24,7 @@
 			      :if-exists :supersede
 			      :if-does-not-exist :create)
 
-	(print (pathname (concatenate 'string (namestring *project-path*) ".gitignore")))
-	(print "#Ignore emacs editor temporary files" stream)
-	(print "[#]*[#]" stream)
-	(print "*~" stream))))
+	(format stream "~a~&" "#Ignore emacs editor temporary files")
+	(format stream "~a~&" "[#]*[#]")
+	(format stream "~a~&" "*~"))))
     

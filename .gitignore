@@ -1,4 +1,3 @@
-
-"#Ignore emacs editor temporary files" 
-"[#]*[#]" 
-"*~" 
+#Ignore emacs editor temporary files 
+[#]*[#]" 
+*~
