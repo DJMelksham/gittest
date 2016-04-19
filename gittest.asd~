@@ -1,0 +1,11 @@
+;;;; gittest.asd
+
+(asdf:defsystem #:gittest
+  :description "Describe gittest here"
+  :author "Damien John Melksham"
+  :license "All rights reserved"
+  :depends-on (#:inferior-shell)
+  :serial t
+  :components ((:file "package")
+               (:file "gittest")))
+
