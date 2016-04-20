@@ -1,4 +1,5 @@
 ;;;; package.lisp
 
 (defpackage :gittest
-  (:use #:cl))
+  (:use #:cl)
+  (:export :git))

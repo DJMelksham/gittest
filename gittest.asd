@@ -1,12 +1,12 @@
 ;;;; gittest.asd
 
-(asdf:defsystem :gittest
+(defsystem #:gittest
+  :name "gittest"
   :description "Gittest is a little project so I can call git from within the CL REPL"
   :author "Damien John Melksham"
   :license "All rights reserved"
-  :depends-on ("inferior-shell")
   :serial t
   :components ((:file "package")
                (:file "gittest"))
-  :depends-on ("uiop"))
+  :depends-on (#:uiop #:inferior-shell))
 
