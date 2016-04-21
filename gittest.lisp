@@ -22,6 +22,7 @@
 
 	(format stream "~a~&" "#Ignore emacs editor temporary files")
 	(format stream "~a~&" "[#]*[#]")
-	(format stream "~a~&" "*~")))
+	(format stream "~a~&" "*~")
+	(format stream "~a~&" "*.*~")
   t)
     
