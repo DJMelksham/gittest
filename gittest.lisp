@@ -1,5 +1,9 @@
 (in-package :gittest)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;Gittest provides a simple way to call git from my Common Lisp REPL
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (defvar *project-path* nil)
 
 (defun set-gittest-active-directory (path/string)
@@ -17,12 +21,12 @@
       (return-from add-emacs-git-ignore nil)
       (with-open-file (stream (uiop:merge-pathnames* *project-path* ".gitignore")
 			      :direction :output
-			      :if-exists :supersede
+			      :if-exists :append
 			      :if-does-not-exist :create)
 
 	(format stream "~a~&" "#Ignore emacs editor temporary files")
 	(format stream "~a~&" "[#]*[#]")
 	(format stream "~a~&" "*~")
-	(format stream "~a~&" "*.*~")
-  t)
-    
+  t)))
+	
+	
