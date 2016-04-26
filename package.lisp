@@ -14,4 +14,5 @@
 	:git-add-commit-push
 	:make-git
 	:git-add-remote
-	:*git-project-path*))
+	:*git-project-path*
+	:path-in-git-p))

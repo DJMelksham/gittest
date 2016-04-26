@@ -16,6 +16,12 @@
  (nth-value 0 (inferior-shell:run/s (make-git-command command)
 			:on-error nil)))
 
+(defun path-in-git-p (&optional (path *git-project-path*))
+  (let ((*git-project-path* path))
+    (if (equal (git "status") "")
+	NIL
+	T)))
+
 (defun add-emacs-git-ignore ()
   (if (null *git-project-path*)
       (return-from add-emacs-git-ignore nil)
