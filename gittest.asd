@@ -1,5 +1,3 @@
-;;;; gittest.asd
-
 (defsystem #:gittest
   :name "gittest"
   :description "Gittest is a little project so I can call git from within the CL REPL"
