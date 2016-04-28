@@ -1,7 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;; Author: Damien John Melksham
-;;; Written and tested on Ubuntu 16.04, SBCL 1.3.1
+;;; Written using Ubuntu 16.04, SBCL 1.3.1
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
@@ -48,7 +48,7 @@
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; *git-project-path* is the dynamic variable to provide the directory path that
+;; *git-project-path* is the dynamic variable providing the directory that
 ;; git commands run in.  You set it via (set-gittest-active-directory)
 
 (defvar *git-project-path* nil)
