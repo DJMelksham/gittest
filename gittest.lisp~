@@ -1,6 +1,0 @@
-;;;; gittest.lisp
-
-(in-package :gittest)
-
-;;; "gittest" goes here. Hacks and glory await!
-
