@@ -1,5 +1,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
+;;; System: Gittest 
 ;;; Author: Damien John Melksham
 ;;; Written using Ubuntu 16.04, SBCL 1.3.1
 ;;;
@@ -12,13 +13,13 @@
 ;;; Gittest is not a particular thoroughly architectured system at this
 ;;; stage.  Its basically a thin wrapper around linux shell commands.
 ;;;
-;;; The project was named after I found my wife's mispronciation 
+;;; The project was named after I found my wife's mispronounciation 
 ;;; of one of my test folders, "gittest", so adorable that 
 ;;; I couldn't bare to change it.
 ;;;
-;;; The basic philosophy of gittest assumes the calling of the (git) function,
+;;; The basic philosophy of gittest assumes calling of the (git) function,
 ;;; with an argument of a single string.  You may think of this string
-;;; as the additional commands you pass to git at the terminal/command line.
+;;; as the additional commands you pass to git a the terminal/command line.
 ;;;
 ;;; Other helper functions exist to automate my most common workflows.
 ;;; Practically all commands of any significance are exported. There is
@@ -27,7 +28,7 @@
 ;;;
 ;;; Gittest uses "inferior-shell" to call out to the command line, changes to
 ;;; the directory listed in *git-project-path* before submitting its commands
-;;; and relies on "uiop" for its pathname and file manipulations.
+;;; and relies on "uiop" for its pathname manipulations.
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
@@ -63,16 +64,18 @@
 ;; Make-git-command is not designed to be called directly
 
 (defun make-git-command (command)
-  "Responsible for turning a string into a compount git command executable by inferior-shell" 
-  (concatenate 'string "cd " (uiop:native-namestring *git-project-path*) " && git " command))
+  "Responsible for turning a string into a compount git 
+   command executable by inferior-shell" 
+  (concatenate 'string "cd "
+	       (uiop:native-namestring *git-project-path*)
+	       " && git " command))
 
 ;; The general purpose git function that calls git at the command line
 ;; with the string supplied to it as additional arguments.
 
 (defun git (command)
   "Calls a git command in the active directory."
- (nth-value 0 (inferior-shell:run/s (make-git-command command)
-				    :on-error nil)))
+  (nth-value 0 (inferior-shell:run/s (make-git-command command) :on-error nil)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;

@@ -7,7 +7,7 @@
 
 (defsystem #:gittest
   :name "gittest"
-  :description "Gittest is a little project so I can call git from the CL REPL"
+  :description "Gittest is a little project to call git from the CL REPL"
   :author "Damien John Melksham"
   :license "All rights reserved"
   :serial t
